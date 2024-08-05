@@ -1,0 +1,44 @@
+{% extends "base.html" %}
+{% load static %}
+
+
+{% block title %}
+This Posts Title
+{% endblock title %}
+{% block css_file %}
+<link rel="stylesheet" href="{% static "Blog/post-detail.css" %}">
+
+{% endblock css_file %}
+
+{% block content %}
+<section id= "summary">
+  <h2>Post Title</h2>
+  <article>
+    <img src=" {% static 'Blog/images/Rara.jpg' %}" alt="Post Title"/>
+    <address> By Aasis</address>
+    <div>
+      Last Updated on <time>July 10th</time>
+    </div>
+  </article>
+</section>
+<main>
+  <p>
+    Lorem ipsum dolor sit amet consectetur, 
+    adipisicing elit. Necessitatibus rerum quos, rem non tempore fugiat, 
+    repudiandae repellat optio dolores dolore repellendus eligendi? Odio nemo voluptates, 
+    earum veritatis sequi et beatae!
+  </p>
+  <p>
+    Lorem ipsum dolor sit amet consectetur, 
+    adipisicing elit. Necessitatibus rerum quos, rem non tempore fugiat, 
+    repudiandae repellat optio dolores dolore repellendus eligendi? Odio nemo voluptates, 
+    earum veritatis sequi et beatae!
+  </p>
+  <p>
+    Lorem ipsum dolor sit amet consectetur, 
+    adipisicing elit. Necessitatibus rerum quos, rem non tempore fugiat, 
+    repudiandae repellat optio dolores dolore repellendus eligendi? Odio nemo voluptates, 
+    earum veritatis sequi et beatae!
+  </p>
+</main>
+{%endblock content%}
