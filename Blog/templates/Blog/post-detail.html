@@ -1,44 +1,26 @@
 {% extends "base.html" %}
 {% load static %}
 
-
 {% block title %}
-This Posts Title
+{{ post.title }}
 {% endblock title %}
+
 {% block css_file %}
 <link rel="stylesheet" href="{% static "Blog/post-detail.css" %}">
-
 {% endblock css_file %}
 
 {% block content %}
-<section id= "summary">
-  <h2>Post Title</h2>
+<section id="summary">
+  <h2>{{ post.title }}</h2>
   <article>
-    <img src=" {% static 'Blog/images/Rara.jpg' %}" alt="Post Title"/>
+    <img src="{% static "Blog/images/"|add:post.image_name %}" alt="{{ post.title }}"/>
     <address> By Aasis</address>
     <div>
-      Last Updated on <time>July 10th</time>
+      Last Updated on <time>{{ post.date|date:"d M Y" }}</time>
     </div>
   </article>
 </section>
 <main>
-  <p>
-    Lorem ipsum dolor sit amet consectetur, 
-    adipisicing elit. Necessitatibus rerum quos, rem non tempore fugiat, 
-    repudiandae repellat optio dolores dolore repellendus eligendi? Odio nemo voluptates, 
-    earum veritatis sequi et beatae!
-  </p>
-  <p>
-    Lorem ipsum dolor sit amet consectetur, 
-    adipisicing elit. Necessitatibus rerum quos, rem non tempore fugiat, 
-    repudiandae repellat optio dolores dolore repellendus eligendi? Odio nemo voluptates, 
-    earum veritatis sequi et beatae!
-  </p>
-  <p>
-    Lorem ipsum dolor sit amet consectetur, 
-    adipisicing elit. Necessitatibus rerum quos, rem non tempore fugiat, 
-    repudiandae repellat optio dolores dolore repellendus eligendi? Odio nemo voluptates, 
-    earum veritatis sequi et beatae!
-  </p>
+  {{ post.content|linebreaks }}
 </main>
-{%endblock content%}
+{% endblock content %}

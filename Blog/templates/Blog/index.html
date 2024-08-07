@@ -26,9 +26,9 @@ My blog
   <h2> My latest thoughts</h2>
 
   <ul>
-    {% comment %} {% for post in posts %} {% endcomment %}
+    {% for post in posts %}
       {% include "Blog/includes/post.html" %}
-    {% comment %} {% endfor %} {% endcomment %}
+    {% endfor %}
   </ul>
 </section>
 
